@@ -56,7 +56,7 @@ export default function Menu() {
 
     else {
       try {
-        const response = await axios.post ('http://localhost:5000/send-order', {
+        const response = await axios.post ("https://great-indian-restaurant.onrender.com/send-order", {
           item1: orderData.Braised_Turtle,
           item2: orderData.Braised_Turtle1,
           item3: orderData.Cheesy_Tokbokki,
@@ -108,7 +108,7 @@ export default function Menu() {
 
     else {
     try {
-      const response = await axios.post ('http://localhost:5000/api/save-order', orderData);
+      const response = await axios.post ("https://great-indian-restaurant.onrender.com/api/save-order", orderData);
       console.log ('order data saved: ', response.data);
 
       setorderData ({
