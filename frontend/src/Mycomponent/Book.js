@@ -101,7 +101,7 @@ export default function Book() {
     }
 
     try {
-      const response = await axios.post ('http://great-indian-restaurant.onrender.com/send-info', {
+      const response = await axios.post ("http://great-indian-restaurant.onrender.com/send-info", {
         email: formData.email,
         message: formData.message,
       });
