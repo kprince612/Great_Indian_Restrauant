@@ -15,7 +15,7 @@ export default function Previous() {
 
   const sendOrderOTP = async () => {
     try {
-      const response = await axios.post ('http://localhost:5000/send-order-otp', {email});
+      const response = await axios.post ("https://great-indian-restaurant.onrender.com/send-order-otp", {email});
       if (response.data.success) {
         alert (`OTP sent to ${email}`);
         setOtpSent (true);
@@ -39,7 +39,7 @@ export default function Previous() {
     }
 
     try {
-      const response = await axios.get('http://localhost:5000/api/orders', {
+      const response = await axios.get("https://great-indian-restaurant.onrender.com/api/orders", {
         params: { email },
       });
 
@@ -56,7 +56,7 @@ export default function Previous() {
 
   const verifyOrderOTP = async () => {
     try {
-      const response = await axios.post ('http://localhost:5000/verify-order-otp', {email, otp});
+      const response = await axios.post ("https://great-indian-restaurant.onrender.com/verify-order-otp", {email, otp});
       if (response.data.success) {
         alert ('Email verification Completed');
         setOtpVerify (true);
