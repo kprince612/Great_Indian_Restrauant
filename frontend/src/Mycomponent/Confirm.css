@@ -1,0 +1,43 @@
+.container65 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 4px solid yellow; */
+    flex-direction: column;
+    margin-top: 100px;
+}
+
+.container65 h2 {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.container65 h4 {
+    font-size: 20px;
+}
+
+.container65 a {
+    margin-top: 25px;
+    border: 2px solid gold;
+    padding: 10px 10px;
+    /* text-decoration: none; */
+    color: gray;
+    font-weight: bold;
+    border-radius: 18px;
+    width: 150px;
+    text-align: center;
+}
+
+.container65 a:hover {
+    color: gold;
+    border-color: gray;
+}
+
+#ti {
+    float: right;
+    margin-top: -50px;
+    margin-right: 50px;
+    /* background-color: aquamarine; */
+    font-weight: bold;
+    color: cadetblue;
+}

@@ -1,0 +1,117 @@
+.container7 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* border: 2px solid yellow; */
+    padding-left: 500px;
+    padding-right: 500px;
+    padding-bottom: 50px;
+    /* background-color: #edeae7; */
+}
+
+.container7 h4 {
+    color: gold;
+    padding-top: 55px;
+    font-size: 20px;
+    width: 500px;
+    text-align: center;
+}
+
+.container7 h2 {
+    font-size: 36px;
+    margin-top: -20px;
+    font-weight: 500;
+    padding-bottom: 5px;
+    width: 500px;
+    text-align: center;
+}
+
+.container7 p {
+    margin-top: 0px;
+    text-align: center;
+    width: 500px;
+}
+
+.container6 {
+    display: flex;
+    justify-content: space-evenly;
+    padding-left: 150px;
+    padding-right: 150px;
+    padding-bottom: 50px;
+    /* background-color: #edeae7; */
+}
+
+.cont1 {
+    height: 400px;
+    width: 325px;
+    border: 2px solid green;
+    border-radius: 15px;
+}
+
+.cont2 {
+    height: 400px;
+    width: 325px;
+    border: 2px solid green;
+    border-radius: 15px;
+}
+
+.cont3 {
+    height: 400px;
+    width: 325px;
+    border: 2px solid green;
+    border-radius: 15px;
+}
+
+.contain1 {
+    height: 250px;
+    background: url('./image111.jpg') no-repeat center center/cover;
+    border-radius: 15px;
+    /* padding: 10px 10px; */
+}
+
+.contain2 {
+    height: 250px;
+    background: url('./image114.jpg') no-repeat center center/cover;
+    border-radius: 15px;
+}
+
+.contain3 {
+    height: 250px;
+    background: url('./image115.jpg') no-repeat center center/cover;
+    border-radius: 15px;
+}
+
+.cont1 p {
+    text-align: center;
+}
+
+.cont2 p {
+    text-align: center;
+}
+
+.cont3 p {
+    text-align: center;
+}
+
+#e:hover {
+    color: goldenrod;
+}
+
+.cont1:hover, .cont2:hover, .cont3:hover {
+    transform: translateY(-10px);
+    transition: transform 0.5s ease;
+}
+
+@media (max-width: 1320px) {
+    .container6 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .cont1, .cont2 {
+        margin-bottom: 50px;
+    }
+}

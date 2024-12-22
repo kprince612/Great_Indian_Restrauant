@@ -1,0 +1,198 @@
+/* #logo{
+    font-size: 25px;
+    color: white;
+}
+
+.container ul li a{
+    font-size: 18px
+}
+
+.container {
+    display: flex;
+    padding-left: 250px;
+    padding-right: 150px;
+    padding-top: 5px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+    opacity: 0.9;
+}
+
+.container ul {
+    display: flex;
+}
+
+.container ul li a {
+    text-decoration: none;
+    padding: 10px 20px;
+    color: white;
+}
+
+.container ul li {
+    list-style: none;
+} */
+
+/* General Styling for Desktop and Larger Screens */
+/* #logo {
+    font-size: 25px;
+    color: white;
+} */
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 50px;
+    background-color: black;
+    opacity: 0.9;
+}
+
+.lo {
+    display: flex;
+    align-items: center;
+}
+
+.logo1 {
+    height: 70px;
+    width: 70px;
+    /* border: 2px solid yellow; */
+    border-radius: 15px;
+    margin-right: 20px;
+    background: url("./image140.png") no-repeat center center/cover;
+    border: 4px solid rgb(74, 194, 154);
+}
+
+.container ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.container ul li {
+    margin-left: 20px;
+}
+
+.container p a {
+    font-size: 25px;
+    color: white;
+    text-decoration: none;
+}
+
+.container ul li a {
+    text-decoration: none;
+    padding: 10px 15px;
+    color: white;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.container ul li a:hover {
+    color: gold;
+    background-color: gray;
+    border-radius: 15px;
+    text-decoration: underline;
+}
+
+/* Mobile Menu Button (hidden on large screens) */
+.menu-toggle {
+    display: none; /* Hidden by default, shown on mobile */
+    background-color: black;
+    color: white;
+    border: none;
+    font-size: 24px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Responsive Media Queries */
+
+/* Tablets and smaller desktops */
+@media (max-width: 1221px) {
+    .container {
+        padding: 15px 30px;
+    }
+    
+    #logo {
+        font-size: 22px;
+    }
+
+    .container ul li a {
+        font-size: 16px;
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 1072px) {
+    .container {
+        flex-direction: column;
+        align-items: center; /* Align everything to the left on mobile */
+        padding: 10px 20px;
+    }
+
+    #logo {
+        font-size: 20px;
+    }
+
+    /* Show the menu toggle button on mobile */
+    .menu-toggle {
+        display: block;
+        align-self: center; /* Align the menu button to the left */
+        margin-left: 0; /* Remove any default margin */
+    }
+
+    /* Hide the menu by default on mobile */
+    .container ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        padding: 10px;
+    }
+
+    /* When the menu is toggled open, show the menu */
+    .container ul.show {
+        display: flex;
+    }
+
+    .container ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .container ul li a {
+        width: 100%;
+        display: block;
+        padding: 10px;
+        font-size: 16px;
+    }
+}
+
+/* For very small mobile devices */
+@media (max-width: 480px) {
+    .container {
+        padding: 10px 15px;
+    }
+
+    #logo {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .menu-toggle {
+        font-size: 20px;
+        margin-top: 0;
+    }
+
+    .container ul {
+        padding: 0;
+        width: 100%;
+    }
+
+    .container ul li a {
+        font-size: 14px;
+    }
+}
