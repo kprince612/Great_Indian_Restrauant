@@ -81,7 +81,7 @@ export default function Verify() {
 
     const sendOTP = async () => {
         try {
-            const response = await axios.post("https://great-indian-restaurant.onrender.com/send-otp", { email });
+            const response = await axios.post("https://the-great-indian-restrauant.vercel.app/send-otp", { email });
             if (response.data.success) {
                 alert(`OTP sent to ${email}`);
                 setOtpSent(true);
@@ -96,7 +96,7 @@ export default function Verify() {
 
     const verifyOTP = async () => {
         try {
-            const response = await axios.post("https://great-indian-restaurant.onrender.com/verify-otp", { email, otp });
+            const response = await axios.post("https://the-great-indian-restrauant.vercel.app/verify-otp", { email, otp });
             if (response.data.success) {
                 alert('Email verified successfully!');
                 navigate ("/Menu");
