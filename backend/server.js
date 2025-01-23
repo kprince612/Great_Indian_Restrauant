@@ -4,7 +4,7 @@ const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = 5000;
 // import './image140.webp'
 
 // Middleware
@@ -16,8 +16,8 @@ let otpStorage = {}; // Store OTPs temporarily (for demo purposes, use a databas
 
 // MongoDB Connection
 mongoose.connect('mongodb://localhost:27017/mydatabase', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
+  // useNewUrlParser: true,
+  // useUnifiedTopology: true,
 })
   .then(() => console.log('Connected to MongoDB'))
   .catch((err) => console.error('MongoDB connection error:', err));
@@ -137,7 +137,7 @@ app.post('/send-otp', async (req, res) => {
       service: 'gmail',
       auth: {
           user: 'princekhandelwal412@gmail.com', // Replace with your email
-          pass: 'moln fpte njcl pdbm', // Replace with your email's app-specific password
+          pass: 'fwpz chtd rqax ctct', // Replace with your email's app-specific password
       },
   });
 
@@ -181,17 +181,17 @@ app.post ('/send-info', async (req, res) => {
     service: 'gmail',
     auth: {
       user: 'princekhandelwal412@gmail.com',
-      pass: 'moln fpte njcl pdbm',
+      pass: 'fwpz chtd rqax ctct',
     },
   });
 
   const mailOptions = {
     from: 'princekhandelwal412@gmail.com',
     to: email,
-    subject: 'order details',
+    subject: 'Your Review',
     html: `<p>Welcome to the Great Indian Restaurant</p>
     <p>"Cooked with Love, Served with Joy."</p>
-    <h2>Your Order details</h2>
+    <h2>Your Review</h2>
     <p>${message.replace (/\n/g, '<br>')}</p>
     <img src="https://i.postimg.cc/264fjvt4/image140.webp" alt="logo">
     <p>for more information <a href="/">www.thegreatindianrestaurant.com</a>`
@@ -218,7 +218,7 @@ app.post ('/send-order', async (req, res) => {
     service: 'gmail',
     auth: {
       user: 'princekhandelwal412@gmail.com',
-      pass: 'moln fpte njcl pdbm',
+      pass: 'fwpz chtd rqax ctct',
     },
   });
 
@@ -276,7 +276,7 @@ app.post ("/send-order-otp", async (req, res) => {
     service: 'gmail',
     auth: {
       user: 'princekhandelwal412@gmail.com',
-      pass: 'moln fpte njcl pdbm',
+      pass: 'fwpz chtd rqax ctct',
     },
   })
 

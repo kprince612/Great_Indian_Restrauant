@@ -6,14 +6,14 @@ export default function Home() {
   const audioRef = useRef(null);
     const [isPlaying, setIsPlaying] = useState(true);
 
-    const togglePlay = () => {
-        if (isPlaying) {
-            audioRef.current.pause();
-        } else {
-            audioRef.current.play();
-        }
-        setIsPlaying(!isPlaying);
-    };
+    // const togglePlay = () => {
+    //     if (isPlaying) {
+    //         audioRef.current.pause();
+    //     } else {
+    //         audioRef.current.play();
+    //     }
+    //     setIsPlaying(!isPlaying);
+    // };
   return (
     <div>
       <div className="container1">
@@ -24,7 +24,7 @@ export default function Home() {
         <div className="box20">
             <h2>Exquisite &</h2>
             <h4>Hedonistic Food</h4>
-            <p id='a'>. . . . . . . . . . . . . . . . . . . .</p>
+            <p id='a'>. . . . . . . . . . . . . . . .</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat facere iusto sapiente. Accusamus veniam blanditiis magni optio alias officia quibusdam.</p>
             <br />
             <a href="/Verify">Order Now</a>
