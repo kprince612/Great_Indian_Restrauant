@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 let otpStorage = {}; // Store OTPs temporarily (for demo purposes, use a database in production)
 
 // MongoDB Connection
-mongoose.connect('mongodb+srv://prince:<db_password>@cluster0.j94qd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/mydatabase', {
+mongoose.connect('mongodb+srv://prince:123@prince@cluster0.j94qd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/mydatabase', {
   // useNewUrlParser: true,
   // useUnifiedTopology: true,
 })
@@ -48,7 +48,7 @@ app.post('/api/contact', async (req, res) => {
   }
 });
 
-// mongoose.connect('mongodb+srv://prince:<db_password>@cluster0.j94qd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/restaurantOrders', {
+// mongoose.connect('mongodb+srv://prince:123@prince@cluster0.j94qd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/restaurantOrders', {
 //   useNewUrlParser: true,
 //   useUnifiedTopology: true,
 // })
@@ -91,7 +91,7 @@ app.post('/api/save-order', async (req, res) => {
   }
 });
 
-// mongoose.connect ('mongodb+srv://prince:<db_password>@cluster0.j94qd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/myorderdata', {
+// mongoose.connect ('mongodb+srv://prince:123@prince@cluster0.j94qd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/myorderdata', {
 //   useNewUrlParser: true,
 //   useUnifiedTopology: true,
 // })
