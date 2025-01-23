@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 let otpStorage = {}; // Store OTPs temporarily (for demo purposes, use a database in production)
 
 // MongoDB Connection
-mongoose.connect('mongodb+srv://prince:123@prince@cluster0.j94qd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/mydatabase', {
+mongoose.connect('mongodb+srv://prince:123@prince@cluster0.j94qd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
   // useNewUrlParser: true,
   // useUnifiedTopology: true,
 })
