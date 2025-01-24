@@ -78,7 +78,7 @@ export default function Previous() {
     <div>
       <div className="container55">
       <div className="previous-orders-container">
-        <img src="https://i.postimg.cc/264fjvt4/image140.webp" alt="logo" />
+        <img src="https://imgur.com/a/olhMO65" alt="logo" />
       <h2 id='head'>Previous Orders</h2>
       
       {!otpSent && (
