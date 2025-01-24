@@ -117,7 +117,7 @@ export default function Previous() {
                 <p><strong>Gyeran Jjim:</strong> {order.Gyeran_Jjim}</p>
                 <p><strong>Steak with Herbes:</strong> {order.Steak_with_Herbes}</p>
                 <p><strong>Total: $</strong>{order.totalAmount}</p>
-                <p style={{color: 'green'}}><strong>Status: </strong> {order.status} </p>
+                <p style={{color: 'green'}}><strong>Status: {!order.status.trim ()?"Pending":order.status}</strong></p>
               </li>
               <hr />
               </>
