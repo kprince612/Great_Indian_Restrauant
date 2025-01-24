@@ -137,7 +137,7 @@ export default function Book() {
 
     else {
     try {
-      const response = await axios.post('http://localhost:5000/api/contact', formData);
+      const response = await axios.post('https://great-indian-restrauant-gray.vercel.app/api/contact', formData);
       console.log('Form data saved:', response.data);
 
      setFormData({
