@@ -9,7 +9,8 @@ const PORT = 5000;
 
 // Middleware
 app.use(cors({
-  origin: 'https://the-great-indian-restrauant.vercel.app'
+  origin: ['https://the-great-indian-restrauant.vercel.app',
+  'https://great-indian-restrauant-qt12.vercel.app']
 }));
 app.use(express.json()); // To handle JSON data from React frontend
 app.use(bodyParser.json());
