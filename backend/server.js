@@ -150,7 +150,7 @@ app.post('/send-otp', async (req, res) => {
       html: `<p>Welcome to the Great Indian Restaurant</p>
       <h2>Your OTP is: ${otp}</h2>
       <p>"Cooked with Love, Served with Joy."</p>
-      <img style={{height: '50px', width: '50px'}} src="https://postimg.cc/V0P7BqDV" alt="logo">
+      <img style={{height: '50px', width: '50px'}} src="https://www.upload.ee/image/17664550/image140.webp" alt="logo">
       <p>for more information <a href="/">www.thegreatindianrestaurant.com</a>`
       ,
   };
@@ -195,7 +195,7 @@ app.post ('/send-info', async (req, res) => {
     <p>"Cooked with Love, Served with Joy."</p>
     <h2>Your Review</h2>
     <p>${message.replace (/\n/g, '<br>')}</p>
-    <img src="https://postimg.cc/V0P7BqDV" alt="logo">
+    <img src="https://www.upload.ee/image/17664550/image140.webp" alt="logo">
     <p>for more information <a href="/">www.thegreatindianrestaurant.com</a>`
     ,
   };
@@ -243,7 +243,7 @@ app.post ('/send-order', async (req, res) => {
     <h4>total Bill :$${total}</h4>
     <span>Your Delivery address is :- <h4>${address}</h4></span>
     <p>if you what to change address then kindly email us<p>
-    <img src="https://postimg.cc/V0P7BqDV" alt="logo">
+    <img src="https://www.upload.ee/image/17664550/image140.webp" alt="logo">
     <p>for more information <a href="/">www.thegreatindianrestaurant.com</a>`
   };
 
@@ -289,7 +289,7 @@ app.post ("/send-order-otp", async (req, res) => {
     html: `<p>Welcome to The Great Indian Restaurant</p>
     <h2>Your OTP is: ${otp}</h2>
     <p>"Cooked with Love, Served with Joy."</p>
-    <img src="https://postimg.cc/V0P7BqDV" alt="logo">
+    <img src="https://www.upload.ee/image/17664550/image140.webp" alt="logo">
     <p>for more information <a href="/"www.thegreatindianrestaurant.com</a>`
     ,
   };
