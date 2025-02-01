@@ -56,10 +56,10 @@ export default function Previous() {
     }
   };
 
-  const playsound = () => {
-    const audio = new Audio ("./ding-101492.mp3");
-    audio.play ();
-  }
+  // const playsound = () => {
+  //   const audio = new Audio ("./ding-101492.mp3");
+  //   audio.play ();
+  // }
 
   const verifyOrderOTP = async () => {
     try {
@@ -68,7 +68,7 @@ export default function Previous() {
         alert ('Email verification Completed');
         setOtpVerify (true);
         fetchOrders ();
-        playsound ();
+        // playsound ();
       }
 
       else {
