@@ -56,6 +56,11 @@ export default function Previous() {
     }
   };
 
+  const playsound = () => {
+    const audio = new Audio ("./ding-101492.mp3");
+    audio.play ();
+  }
+
   const verifyOrderOTP = async () => {
     try {
       const response = await axios.post ("https://great-indian-restrauant-gray.vercel.app/verify-order-otp", {email, otp});
@@ -63,6 +68,7 @@ export default function Previous() {
         alert ('Email verification Completed');
         setOtpVerify (true);
         fetchOrders ();
+        playsound ();
       }
 
       else {
