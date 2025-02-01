@@ -13,6 +13,8 @@ export default function Previous() {
   const [otpVerify, setOtpVerify] = useState (false);
   const navigate = useNavigate();
 
+  let Pending = "Pending";
+
   const sendOrderOTP = async () => {
     try {
       const response = await axios.post ("https://great-indian-restrauant-gray.vercel.app/send-order-otp", {email});

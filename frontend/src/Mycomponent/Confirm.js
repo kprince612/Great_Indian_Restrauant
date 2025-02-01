@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import './Confirm.css'
 
 export default function Confirm() {
+  const audioRef = useRef (null)
   let now;
   now = new Date ();
 
@@ -36,6 +37,10 @@ export default function Confirm() {
         <p>Please review us for better services</p>
         <p>Visit again</p>
         <a href="/">Back to Home</a>
+        </div>
+
+        <div className="music-player">
+          <audio ref={audioRef} src="./ding-101492.mp3" autoPlay></audio>
         </div>
     </div>
   )
