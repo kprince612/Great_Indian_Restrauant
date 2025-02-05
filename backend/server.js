@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const mongoose = require('mongoose');
 const nodemailer = require('nodemailer');
@@ -18,7 +20,12 @@ app.use(bodyParser.json());
 let otpStorage = {}; // Store OTPs temporarily (for demo purposes, use a database in production)
 
 // MongoDB Connection
-mongoose.connect('mongodb+srv://khandelwalprince612:123456Prince@cluster0.zbt6z.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
+
+const mongoURL = process.env.MONGO_URL;
+const emailUser = process.env.EMAIL_USER;
+const emailPass = process.env.EMAIL_PASS;
+
+mongoose.connect(mongoURL, {
   // useNewUrlParser: true,
   // useUnifiedTopology: true,
 })
@@ -139,13 +146,13 @@ app.post('/send-otp', async (req, res) => {
   const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-          user: 'princekhandelwal412@gmail.com', // Replace with your email
-          pass: 'fwpz chtd rqax ctct', // Replace with your email's app-specific password
+          user: emailUser, // Replace with your email
+          pass: emailPass, // Replace with your email's app-specific password
       },
   });
 
   const mailOptions = {
-      from: 'princekhandelwal412@gmail.com',
+      from: emailUser,
       to: email,
       subject: 'Your OTP for Email Verification',
       html: `<p>Welcome to the Great Indian Restaurant</p>
@@ -183,13 +190,13 @@ app.post ('/send-info', async (req, res) => {
   const transporter = nodemailer.createTransport ({
     service: 'gmail',
     auth: {
-      user: 'princekhandelwal412@gmail.com',
-      pass: 'fwpz chtd rqax ctct',
+      user: emailUser,
+      pass: emailPass,
     },
   });
 
   const mailOptions = {
-    from: 'princekhandelwal412@gmail.com',
+    from: emailUser,
     to: email,
     subject: 'Your Review',
     html: `<p>Welcome to the Great Indian Restaurant</p>
@@ -220,13 +227,13 @@ app.post ('/send-order', async (req, res) => {
   const transporter = nodemailer.createTransport ({
     service: 'gmail',
     auth: {
-      user: 'princekhandelwal412@gmail.com',
-      pass: 'fwpz chtd rqax ctct',
+      user: emailUser,
+      pass: emailPass,
     },
   });
 
   const mailOptions = {
-    from: 'princekhandelwal412@gmail.com',
+    from: emailUser,
     to: email,
     subject: 'order details',
     html: `<p>Welcome to the Great Indian Restaurant</p>
@@ -278,13 +285,13 @@ app.post ("/send-order-otp", async (req, res) => {
   const transporter = nodemailer.createTransport ({
     service: 'gmail',
     auth: {
-      user: 'princekhandelwal412@gmail.com',
-      pass: 'fwpz chtd rqax ctct',
+      user: emailUser,
+      pass: emailPass,
     },
   })
 
   const mailOptions = {
-    from: 'princekhandelwal412@gmail.com',
+    from: emailUser,
     to: email,
     subject: 'OTP for Previous Orders',
     html: `<p>Welcome to The Great Indian Restaurant</p>
