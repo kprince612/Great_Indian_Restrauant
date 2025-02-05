@@ -139,13 +139,13 @@ app.post('/send-otp', async (req, res) => {
   const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-          user: process.env.email, // Replace with your email
-          pass: process.env.password, // Replace with your email's app-specific password
+          user: 'princekhandelwal412@gmail.com', // Replace with your email
+          pass: 'fwpz chtd rqax ctct', // Replace with your email's app-specific password
       },
   });
 
   const mailOptions = {
-      from: process.env.email,
+      from: 'princekhandelwal412@gmail.com',
       to: email,
       subject: 'Your OTP for Email Verification',
       html: `<p>Welcome to the Great Indian Restaurant</p>
@@ -183,13 +183,13 @@ app.post ('/send-info', async (req, res) => {
   const transporter = nodemailer.createTransport ({
     service: 'gmail',
     auth: {
-      user: process.env.email,
-      pass: process.env.password,
+      user: 'princekhandelwal412@gmail.com',
+      pass: 'fwpz chtd rqax ctct',
     },
   });
 
   const mailOptions = {
-    from: process.env.email,
+    from: 'princekhandelwal412@gmail.com',
     to: email,
     subject: 'Your Review',
     html: `<p>Welcome to the Great Indian Restaurant</p>
@@ -220,13 +220,13 @@ app.post ('/send-order', async (req, res) => {
   const transporter = nodemailer.createTransport ({
     service: 'gmail',
     auth: {
-      user: process.env.email,
-      pass: process.env.password,
+      user: 'princekhandelwal412@gmail.com',
+      pass: 'fwpz chtd rqax ctct',
     },
   });
 
   const mailOptions = {
-    from: process.env.email,
+    from: 'princekhandelwal412@gmail.com',
     to: email,
     subject: 'order details',
     html: `<p>Welcome to the Great Indian Restaurant</p>
@@ -278,13 +278,13 @@ app.post ("/send-order-otp", async (req, res) => {
   const transporter = nodemailer.createTransport ({
     service: 'gmail',
     auth: {
-      user: process.env.email,
-      pass: process.env.password,
+      user: 'princekhandelwal412@gmail.com',
+      pass: 'fwpz chtd rqax ctct',
     },
   })
 
   const mailOptions = {
-    from: process.env.email,
+    from: 'princekhandelwal412@gmail.com',
     to: email,
     subject: 'OTP for Previous Orders',
     html: `<p>Welcome to The Great Indian Restaurant</p>
