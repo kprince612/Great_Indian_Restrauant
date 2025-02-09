@@ -5,7 +5,9 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const app = express();
 const PORT = 5000;
+import React, { useEffect, useState } from 'react';
 // import './image140.webp'
+const [visitCount, setVisitCount] = useState (0);
 
 // Middleware
 app.use(cors({
@@ -315,6 +317,22 @@ app.post ('/verify-order-otp', (req, res) => {
 
   res.status (400).json ({success: false, message: 'Invalid OTP'});
 });
+
+app.post ('/send-visited', (req, res) => {
+  let count = localStorage.getItem ('visitCount');
+
+  if (!count) {
+    count = 1;
+  }
+
+  else {
+    count = parseInt (count) + 1;
+  }
+
+  localStorage.setItem ('visitCount', count);
+
+  setVisitedCount (count);
+}, []);
 
 
 // Start the server

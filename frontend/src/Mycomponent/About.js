@@ -2,27 +2,49 @@
 import React, { useEffect, useState } from 'react';
 import ReactPlayer from 'react-player';
 import './About.css'
+import axios from 'axios';
 
 export default function About() {
   const [visitCount, setVisitCount] = useState(0);
 
-  useEffect(() => {
-    // Get the current visit count from local storage
-    let count = localStorage.getItem('visitCount');
+  // useEffect(() => {
+  //   // Get the current visit count from local storage
+  //   let count = localStorage.getItem('visitCount');
     
-    // If it's the user's first visit, initialize the count
-    if (!count) {
-      count = 1;
-    } else {
-      count = parseInt(count) + 1;
+  //   // If it's the user's first visit, initialize the count
+  //   if (!count) {
+  //     count = 1;
+  //   } else {
+  //     count = parseInt(count) + 1;
+  //   }
+    
+  //   // Update the local storage with the new count
+  //   localStorage.setItem('visitCount', count);
+    
+  //   // Update the state to show the visit count
+  //   setVisitCount(count);
+  // }, []);
+
+  useEffect (() => {
+    const sendVisited = async () => {
+      try {
+        const response = await axios.post ("https://great-indian-restrauant-gray.vercel.app/send-visited");
+
+        if (response.data.success) {
+          alert ("visted works");
+        }
+
+        else {
+          alert ("error visited");
+        }
+      }
+
+      catch {
+        console.error (error);
+        alert ("error in visited system");
+      }
     }
-    
-    // Update the local storage with the new count
-    localStorage.setItem('visitCount', count);
-    
-    // Update the state to show the visit count
-    setVisitCount(count);
-  }, []);
+  })
   return (
     <div>
     <div className="floating-bg"></div>
