@@ -91,7 +91,10 @@ const Visit = mongoose.model('Visit', visitSchema);
 async function initializeVisitCount() {
   const visitDoc = await Visit.findOne();
   if (!visitDoc) {
-    await new Visit({ count: 1 }).save();
+    visitDoc = new Visit({ count: 0 });
+    await visitDoc.save();
+    console.log('Visit counter initialized in MongoDB.');
+    // await new Visit({ count: 1 }).save();
   }
 }
 initializeVisitCount();
@@ -107,17 +110,33 @@ app.get('/api/visit-count', async (req, res) => {
 });
 
 // API to Increment the Visit Count
+// app.post('/api/increment-visit', async (req, res) => {
+//   try {
+//     const visitDoc = await Visit.findOne();
+//     if (visitDoc) {
+//       visitDoc.count += 1;
+//       await visitDoc.save();
+//       res.json({ success: true, visitCount: visitDoc.count });
+//     } else {
+//       res.status(500).json({ error: 'Visit count document not found' });
+//     }
+//   } catch (error) {
+//     res.status(500).json({ error: 'Error updating visit count' });
+//   }
+// });
+
 app.post('/api/increment-visit', async (req, res) => {
   try {
-    const visitDoc = await Visit.findOne();
-    if (visitDoc) {
-      visitDoc.count += 1;
-      await visitDoc.save();
-      res.json({ success: true, visitCount: visitDoc.count });
-    } else {
-      res.status(500).json({ error: 'Visit count document not found' });
-    }
+    const updatedVisitDoc = await Visit.findOneAndUpdate(
+      {},
+      { $inc: { count: 1 } },
+      { new: true, upsert: true }
+    );
+
+    console.log(`Visit count updated: ${updatedVisitDoc.count}`);
+    res.json({ success: true, visitCount: updatedVisitDoc.count });
   } catch (error) {
+    console.error('Error updating visit count:', error);
     res.status(500).json({ error: 'Error updating visit count' });
   }
 });

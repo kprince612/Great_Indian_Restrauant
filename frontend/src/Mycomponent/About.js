@@ -48,7 +48,7 @@ export default function About() {
 
   useEffect(() => {
     // Fetch and update the visit count
-    const fetchVisitCount = async () => {
+    const updateVisitCount = async () => {
       try {
         // Increment visit count on the server
         await axios.post('https://great-indian-restrauant-gray.vercel.app/api/increment-visit');
@@ -61,7 +61,7 @@ export default function About() {
       }
     };
 
-    fetchVisitCount();
+    updateVisitCount ();
   }, []);
   return (
     <div>
