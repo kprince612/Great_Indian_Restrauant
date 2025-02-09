@@ -5,9 +5,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const app = express();
 const PORT = 5000;
-import React, { useEffect, useState } from 'react';
 // import './image140.webp'
-const [visitCount, setVisitCount] = useState (0);
 
 // Middleware
 app.use(cors({
@@ -79,67 +77,6 @@ const orderSchema = new mongoose.Schema({
 }, { timestamps: true });
 
 const Order = mongoose.model('Order', orderSchema);
-
-// Define a schema for visit tracking
-const visitSchema = new mongoose.Schema({
-  count: { type: Number, default: 0 }
-});
-
-const Visit = mongoose.model('Visit', visitSchema);
-
-// Initialize visit count if it doesn't exist
-async function initializeVisitCount() {
-  const visitDoc = await Visit.findOne();
-  if (!visitDoc) {
-    visitDoc = new Visit({ count: 0 });
-    await visitDoc.save();
-    console.log('Visit counter initialized in MongoDB.');
-    // await new Visit({ count: 1 }).save();
-  }
-}
-initializeVisitCount();
-
-// API to Get the Visit Count
-app.get('/api/visit-count', async (req, res) => {
-  try {
-    const visitDoc = await Visit.findOne();
-    res.json({ visitCount: visitDoc ? visitDoc.count : 0 });
-  } catch (error) {
-    res.status(500).json({ error: 'Error retrieving visit count' });
-  }
-});
-
-// API to Increment the Visit Count
-// app.post('/api/increment-visit', async (req, res) => {
-//   try {
-//     const visitDoc = await Visit.findOne();
-//     if (visitDoc) {
-//       visitDoc.count += 1;
-//       await visitDoc.save();
-//       res.json({ success: true, visitCount: visitDoc.count });
-//     } else {
-//       res.status(500).json({ error: 'Visit count document not found' });
-//     }
-//   } catch (error) {
-//     res.status(500).json({ error: 'Error updating visit count' });
-//   }
-// });
-
-app.post('/api/increment-visit', async (req, res) => {
-  try {
-    const updatedVisitDoc = await Visit.findOneAndUpdate(
-      {},
-      { $inc: { count: 1 } },
-      { new: true, upsert: true }
-    );
-
-    console.log(`Visit count updated: ${updatedVisitDoc.count}`);
-    res.json({ success: true, visitCount: updatedVisitDoc.count });
-  } catch (error) {
-    console.error('Error updating visit count:', error);
-    res.status(500).json({ error: 'Error updating visit count' });
-  }
-});
 
 // API Endpoint to Save Order Data
 app.post('/api/save-order', async (req, res) => {
@@ -378,22 +315,6 @@ app.post ('/verify-order-otp', (req, res) => {
 
   res.status (400).json ({success: false, message: 'Invalid OTP'});
 });
-
-// app.post ('/send-visited', (req, res) => {
-//   let count = localStorage.getItem ('visitCount');
-
-//   if (!count) {
-//     count = 1;
-//   }
-
-//   else {
-//     count = parseInt (count) + 1;
-//   }
-
-//   localStorage.setItem ('visitCount', count);
-
-//   setVisitedCount (count);
-// }, []);
 
 
 // Start the server

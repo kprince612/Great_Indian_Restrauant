@@ -2,66 +2,26 @@
 import React, { useEffect, useState } from 'react';
 import ReactPlayer from 'react-player';
 import './About.css'
-import axios from 'axios';
 
 export default function About() {
   const [visitCount, setVisitCount] = useState(0);
 
-  // useEffect(() => {
-  //   // Get the current visit count from local storage
-  //   let count = localStorage.getItem('visitCount');
-    
-  //   // If it's the user's first visit, initialize the count
-  //   if (!count) {
-  //     count = 1;
-  //   } else {
-  //     count = parseInt(count) + 1;
-  //   }
-    
-  //   // Update the local storage with the new count
-  //   localStorage.setItem('visitCount', count);
-    
-  //   // Update the state to show the visit count
-  //   setVisitCount(count);
-  // }, []);
-
-  // useEffect (() => {
-  //   const sendVisited = async () => {
-  //     try {
-  //       const response = await axios.post ("https://great-indian-restrauant-gray.vercel.app/send-visited");
-
-  //       if (response.data.success) {
-  //         alert ("visted works");
-  //       }
-
-  //       else {
-  //         alert ("error visited");
-  //       }
-  //     }
-
-  //     catch {
-  //       console.error (error);
-  //       alert ("error in visited system");
-  //     }
-  //   }
-  // })
-
   useEffect(() => {
-    // Fetch and update the visit count
-    const updateVisitCount = async () => {
-      try {
-        // Increment visit count on the server
-        await axios.post('https://great-indian-restrauant-gray.vercel.app/api/increment-visit');
-        
-        // Fetch updated visit count
-        const response = await axios.get('https://great-indian-restrauant-gray.vercel.app/api/visit-count');
-        setVisitCount(response.data.visitCount);
-      } catch (error) {
-        console.error('Error fetching visit count:', error);
-      }
-    };
-
-    updateVisitCount ();
+    // Get the current visit count from local storage
+    let count = localStorage.getItem('visitCount');
+    
+    // If it's the user's first visit, initialize the count
+    if (!count) {
+      count = 1;
+    } else {
+      count = parseInt(count) + 1;
+    }
+    
+    // Update the local storage with the new count
+    localStorage.setItem('visitCount', count);
+    
+    // Update the state to show the visit count
+    setVisitCount(count);
   }, []);
   return (
     <div>
