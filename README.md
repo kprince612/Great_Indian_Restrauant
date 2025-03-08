@@ -11,3 +11,14 @@ A modern and user-friendly food ordering website where users can browse dishes, 
 📱 Fully Responsive UI
 
 🚀 Fast & Optimized Performance
+
+🛠️ Tech Stack
+
+Frontend: React, Tailwind CSS
+
+Backend: Node.js, Express.js
+
+Database: MongoDB
+
+Deployment: Vercel (Frontend), vercel (Backend)
+
