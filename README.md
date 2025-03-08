@@ -21,4 +21,3 @@ Backend: Node.js, Express.js
 Database: MongoDB
 
 Deployment: Vercel (Frontend), vercel (Backend)
-
