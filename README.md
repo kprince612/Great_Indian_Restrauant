@@ -14,7 +14,7 @@ A modern and user-friendly food ordering website where users can browse dishes, 
 
 🛠️ Tech Stack
 
-Frontend: React, Tailwind CSS
+Frontend: React, CSS
 
 Backend: Node.js, Express.js
 
